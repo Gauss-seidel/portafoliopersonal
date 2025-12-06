@@ -4,18 +4,109 @@
 =================================*/
 
 .projects-grid {
-    margin-top: 50px;
+    margin-top: 60px;
+}
+
+.project-card {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Overlay sutil en hover */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-accent), transparent);
+    opacity: 0;
+    transition: opacity var(--transition);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    opacity: 0.1;
 }
 
 .project-card h2 {
     color: var(--color-primary);
+    transition: color var(--transition);
+}
+
+.project-card:hover h2 {
+    color: var(--color-accent);
 }
 
 .project-card p {
     color: var(--color-text-secondary);
+    line-height: 1.7;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 25px 50px -12px rgba(66, 153, 225, 0.25);
 }
+
+/* Badge de tecnologías mejorado */
+.tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.tech::before {
+    content: attr(data-tech);
+}
+
+/* Si quieres múltiples badges */
+.project-card .tech-stack {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.tech-badge {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    font-weight: 600;
+    padding: 5px 10px;
+    background-color: rgba(66, 153, 225, 0.08);
+    border-radius: var(--border-radius-sm);
+    letter-spacing: 0.03em;
+    border: 1px solid rgba(66, 153, 225, 0.15);
+    transition: all var(--transition-fast);
+}
+
+.tech-badge:hover {
+    background-color: rgba(66, 153, 225, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Animación de carga progresiva */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: slideInUp 0.6s ease-out backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
