@@ -110,3 +110,38 @@
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 .project-card:nth-child(5) { animation-delay: 0.5s; }
 .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+
+.buttondiv {
+    display: flex;
+    justify-content: flex-end; 
+    margin: 1rem 0;
+}
+
+.buttonproyect {
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    border: none;
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.buttonproyect:hover {
+    background-color: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: var(--color-surface);
+}
+
+.buttonproyect:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-highlight);
+}

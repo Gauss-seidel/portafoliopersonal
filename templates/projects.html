@@ -6,9 +6,11 @@
     <title>Willian Núñez - Proyectos</title>
     <meta name="description" content="Proyectos de desarrollo web de Willian Núñez">
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="../css/proyects.css">
 </head>
 <body>
+    <!-- Canvas para animación de ondas -->
+    <canvas id="canvas"></canvas>
 
 <header>
     <nav class="navbar">
@@ -25,44 +27,150 @@
 
     <div class="projects-grid">
         <div class="project-card">
-            <img src="../img/project1.jpg" alt="Sistema Académico" loading="lazy">
+            <img src="../src/soundcraf.png" alt="Soundcraft Eventos - Academia" loading="lazy">
             <div>
-                <h2>Sistema Académico</h2>
-                <p>Dashboard completo con autenticación, gestión de estudiantes y panel administrativo. Diseño responsive y funcional.</p>
+                <h2>Soundcraft Eventos - Academia</h2>
+                <p>Web para la academia de Soundcraft Eventos, diseñada para ofrecer información clara sobre la institución y sus cursos. Desarrollo en curso.</p>
                 <div class="tech-stack">
                     <span class="tech-badge">HTML5</span>
                     <span class="tech-badge">CSS3</span>
-                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">React</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="https://soundcraftv2.onrender.com" target="_blank" rel="noopener noreferrer" class="buttonproyect"> Explorar </a>
                 </div>
             </div>
         </div>
 
         <div class="project-card">
-            <img src="../img/project2.jpg" alt="Portafolio Web" loading="lazy">
+            <img src="../src/ampere.png" alt="Ampere - Plataforma Web" loading="lazy">
             <div>
-                <h2>Portafolio Web</h2>
-                <p>Sitio personal con diseño minimalista y moderno. Optimizado para rendimiento y experiencia de usuario.</p>
+                <h2>Ampere - Plataforma Web</h2>
+                <p>Sitio empresarial con diseño minimalista y moderno, optimizado para rendimiento y experiencia de usuario. Actualmente en desarrollo.</p>
                 <div class="tech-stack">
-                    <span class="tech-badge">HTML5</span>
                     <span class="tech-badge">CSS3</span>
-                    <span class="tech-badge">Responsive</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="https://ampere2.onrender.com" target="_blank" rel="noopener noreferrer" class="buttonproyect"> Explorar </a>
                 </div>
             </div>
         </div>
 
-        <!-- Puedes agregar más proyectos siguiendo esta estructura -->
         <div class="project-card">
-            <img src="../img/project3.jpg" alt="Landing Page" loading="lazy">
+            <img src="../src/ampereControl.png" alt="ampereControl" loading="lazy">
             <div>
-                <h2>Landing Page Comercial</h2>
-                <p>Página de aterrizaje con call-to-actions efectivos y diseño orientado a conversión.</p>
+                <h2>Ampere – Sistema de Gestión Financiera</h2>
+                <p>Sistema de gestión de ingresos y egresos con cálculo de balance por rango de fechas y generación de reportes PDF personalizados.</p>
                 <div class="tech-stack">
-                    <span class="tech-badge">HTML5</span>
                     <span class="tech-badge">CSS3</span>
-                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">GoogleSheet</span>
+                    <span class="tech-badge">Flask</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="#" rel="noopener noreferrer" class="buttonproyect"> Acceso restringido </a>
                 </div>
             </div>
         </div>
+
+        <div class="project-card">
+            <img src="../src/davidvera2.png" alt="David Vera Training" loading="lazy">
+            <div>
+                <h2>David Vera Training</h2>
+                <p>Personalización del proyecto final de MA, integrando IA y gestión de usuarios en base de datos. Evaluación en curso.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">IA</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">SQLite</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="https://diegoveratraining.onrender.com" target="_blank" rel="noopener noreferrer" class="buttonproyect"> Explorar </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="../src/powerfit.png" alt="PowerFit Gym" loading="lazy">
+            <div>
+                <h2>PowerFit - Proyecto</h2>
+                <p>Proyecto final de curso en MA (Monkey Academy), primer puesto. Trabajo completado con excelencia. </p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">Flask</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="https://proyectomonkey.onrender.com" target="_blank" rel="noopener noreferrer" class="buttonproyect"> Explorar </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="../src/pokedex.png" alt="Pokedex" loading="lazy">
+            <div>
+                <h2>Pokedex</h2>
+                <p>Pokedex con la API de PokeAPI, con el objetivo de mostrar los Pokémon y sus características.(culminado)</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="https://proyectomonkey.onrender.com" target="_blank" rel="noopener noreferrer" class="buttonproyect"> Explorar </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="../src/feedback.png" alt="feedback" loading="lazy">
+            <div>
+                <h2>Formulario Feedback</h2>
+                <p>Formulario conectado a Google Sheets para la gestión y almacenamiento de opiniones, con sistema de modo claro/oscuro. Actualmente en operación.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">GoogleSheet</span>
+                    <span class="tech-badge">HTML</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="#" rel="noopener noreferrer" class="buttonproyect"> Acceso restringido </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="../src/lcestudio.png" alt="LCestudio" loading="lazy">
+            <div>
+                <h2>LC-studio</h2>
+                <p>Landing page diseñada para difundir información sobre el cursillo de ingreso a CTN y colegios asociados.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">Responsive Design</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="https://gauss-seidel.github.io/LC/" target="_blank" rel="noopener noreferrer" class="buttonproyect"> Explorar </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="../src/contaduria.png" alt="contaduriaCJ" loading="lazy">
+            <div>
+                <h2>Contaduria CJ</h2>
+                <p>Landing page para presentar los servicios de un profesional en contabilidad, incluyendo gestión de IVA, IRP y otras cuestiones fiscales.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">Responsive Design</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">HTML</span>
+                </div>
+                <div class="buttondiv">
+                    <a href="#" rel="noopener noreferrer" class="buttonproyect"> Solo interno </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
 
@@ -70,6 +178,8 @@
     <p>© 2025 Willian Núñez – Desarrollador Web</p>
 </footer>
 
+<!-- Script de fondo animado -->
+<script src="../js/background.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>
