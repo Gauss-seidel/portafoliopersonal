@@ -1,0 +1,21 @@
+/* ===============================
+   PROJECTS.CSS
+   Estilos específicos para la página de proyectos
+=================================*/
+
+.projects-grid {
+    margin-top: 50px;
+}
+
+.project-card h2 {
+    color: var(--color-primary);
+}
+
+.project-card p {
+    color: var(--color-text-secondary);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}

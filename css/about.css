@@ -1,0 +1,23 @@
+/* ===============================
+   ABOUT.CSS
+   Estilos específicos para la página Sobre mí
+=================================*/
+
+.about-container {
+    gap: 50px;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.profile-img {
+    border: 4px solid var(--color-primary);
+    padding: 5px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}

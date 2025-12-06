@@ -1,0 +1,19 @@
+/* ===============================
+   SKILLS.CSS
+   Estilos específicos para la página Habilidades
+=================================*/
+
+.skill-block {
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.skill-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.skill-block ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--color-text-secondary);
+}
