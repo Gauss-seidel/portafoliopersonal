@@ -1,0 +1,52 @@
+═══ INSTRUCCIONES DE DESPLIEGUE — RENDER STATIC SITE ═══
+
+Requisito: tener una cuenta en https://render.com
+
+─────────────────────────────────────────────
+ 1. PREPARAR EL PROYECTO LOCALMENTE
+─────────────────────────────────────────────
+
+  npm install
+  npm run build      → genera la carpeta dist/
+
+Probar local: npm run dev
+
+─────────────────────────────────────────────
+ 2. SUBIR A GITHUB (si no está ya)
+─────────────────────────────────────────────
+
+  git add -A
+  git commit -m "portfolio v2"
+  git push origin main
+
+─────────────────────────────────────────────
+ 3. CREAR EL STATIC SITE EN RENDER
+─────────────────────────────────────────────
+
+  1. Ir a https://dashboard.render.com
+  2. Botón "New +" → "Static Site"
+  3. Conectar repositorio de GitHub
+  4. Configurar:
+
+     Name:            portafolio (o el nombre que quieras)
+     Branch:          main
+     Build Command:   npm install && npm run build
+     Publish Directory: dist
+     Build Filter:    (opcional) marcar "Auto-deploy" solo en main
+
+  5. Click "Create Static Site"
+
+─────────────────────────────────────────────
+ 4. URL
+─────────────────────────────────────────────
+
+Render asigna una URL tipo: https://portafolio.onrender.com
+Se puede configurar dominio personalizado en Settings → Custom Domain.
+
+─────────────────────────────────────────────
+ 5. ACTUALIZACIONES FUTURAS
+─────────────────────────────────────────────
+
+Hacer push a main → Render detecta el cambio y redeploy automático.
+
+Más info: https://render.com/docs/static-sites
