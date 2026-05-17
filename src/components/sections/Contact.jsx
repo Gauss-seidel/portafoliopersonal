@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Reveal from '../animations/Reveal'
 import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer'
+import { useLanguage } from '../../context/LanguageContext'
 
 const links = [
   {
@@ -38,6 +39,7 @@ const links = [
 
 export default function Contact() {
   const [formState, setFormState] = useState('idle')
+  const { t } = useLanguage()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -49,17 +51,16 @@ export default function Contact() {
   return (
     <section className="section section--default">
       <Reveal>
-        <h2 className="section-title">Contacto</h2>
+        <h2 className="section-title">{t('contact.title')}</h2>
         <div className="section-divider" style={{ marginBottom: '2.5rem' }} />
       </Reveal>
 
       <div className="contact-grid">
         <div>
           <Reveal y={30}>
-            <h3 className="contact-intro">Hablemos</h3>
+            <h3 className="contact-intro">{t('contact.intro')}</h3>
             <p className="contact-desc">
-              Estoy abierto a proyectos freelance, colaboraciones y oportunidades laborales.
-              No dudes en escribirme.
+              {t('contact.description')}
             </p>
           </Reveal>
 
@@ -90,30 +91,30 @@ export default function Contact() {
         <Reveal y={30}>
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-field">
-              <label>Nombre</label>
+              <label>{t('contact.form.name')}</label>
               <input
                 type="text"
                 required
                 className="form-input"
-                placeholder="Tu nombre"
+                placeholder={t('contact.form.namePlaceholder')}
               />
             </div>
             <div className="form-field">
-              <label>Email</label>
+              <label>{t('contact.form.email')}</label>
               <input
                 type="email"
                 required
                 className="form-input"
-                placeholder="tu@email.com"
+                placeholder={t('contact.form.emailPlaceholder')}
               />
             </div>
             <div className="form-field">
-              <label>Mensaje</label>
+              <label>{t('contact.form.message')}</label>
               <textarea
                 required
                 rows={4}
                 className="form-input form-textarea"
-                placeholder="Escribe tu mensaje..."
+                placeholder={t('contact.form.messagePlaceholder')}
               />
             </div>
             <motion.button
@@ -123,9 +124,9 @@ export default function Contact() {
               whileHover={formState === 'idle' ? { scale: 1.02 } : {}}
               whileTap={formState === 'idle' ? { scale: 0.98 } : {}}
             >
-              {formState === 'idle' && 'Enviar mensaje'}
-              {formState === 'sending' && 'Enviando...'}
-              {formState === 'sent' && '\u2713 Mensaje enviado'}
+              {formState === 'idle' && t('contact.form.submit')}
+              {formState === 'sending' && t('contact.form.sending')}
+              {formState === 'sent' && t('contact.form.sent')}
             </motion.button>
           </form>
         </Reveal>

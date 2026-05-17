@@ -3,19 +3,20 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AnimatedText from '../animations/AnimatedText'
 import Button from '../ui/Button'
-
-const roles = ['Desarrollador Full Stack', 'Creador de Interfaces', 'Ingeniero Frontend']
+import { useLanguage } from '../../context/LanguageContext'
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
   const navigate = useNavigate()
+  const { t } = useLanguage()
+  const roles = t('hero.roles')
 
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((i) => (i + 1) % roles.length)
     }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [roles])
 
   return (
     <section className="hero">
@@ -26,14 +27,14 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <span className="hero-badge">
-            Full Stack Web Developer
+            {t('hero.badge')}
           </span>
         </motion.div>
 
         <h1 className="hero-title">
-          <span className="hero-title-block">Hola, soy</span>
+          <span className="hero-title-block">{t('hero.greeting')}</span>
           <span className="hero-title-block--accent">
-            <AnimatedText text="Willian N&uacute;&ntilde;ez" />
+            <AnimatedText text={t('hero.name')} />
           </span>
         </h1>
 
@@ -59,13 +60,13 @@ export default function Hero() {
             className="btn--full"
             onClick={() => navigate('/projects')}
           >
-            Ver Proyectos
+            {t('hero.viewProjects')}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </Button>
           <Button variant="outline" className="btn--full" onClick={() => navigate('/contact')}>
-            Contactar
+            {t('hero.contact')}
           </Button>
         </motion.div>
       </div>

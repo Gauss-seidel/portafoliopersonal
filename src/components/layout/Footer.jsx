@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../../context/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -14,7 +17,7 @@ export default function Footer() {
 
         <div className="footer-content">
           <p className="footer-copy">
-            &copy; 2025 Willian Nuñez &mdash; Full Stack Web Developer
+            {t('footer.copyright')}
           </p>
 
           <div className="footer-social">

@@ -1,16 +1,15 @@
 import Reveal from '../animations/Reveal'
 import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer'
-
-const interests = [
-  'Desarrollo Web', 'React & Frontend', 'Enseñanza',
-  'Proyectos Integradores', 'Diseño Intuitivo', 'Optimización',
-]
+import { useLanguage } from '../../context/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
+  const interests = t('about.interests')
+
   return (
     <section className="section section--tall">
       <Reveal>
-        <h2 className="section-title">Sobre m&iacute;</h2>
+        <h2 className="section-title">{t('about.title')}</h2>
         <div className="section-divider" style={{ marginBottom: '2.5rem' }} />
       </Reveal>
 
@@ -29,18 +28,13 @@ export default function About() {
 
         <Reveal className="about-text">
           <p className="about-text-intro">
-            Hola, soy <strong className="about-text-em">Willian N&uacute;&ntilde;ez</strong>,{' '}
-            desarrollador web apasionado por crear interfaces claras, funcionales y con atenci&oacute;n al detalle.
+            {t('about.intro')}
           </p>
           <p className="about-text-body">
-            Me especializo en construir experiencias frontend modernas con{' '}
-            <span className="about-text-highlight">React y JavaScript</span>,
-            combinando c&oacute;digo limpio con dise&ntilde;o intuitivo. Mi enfoque est&aacute; en la{' '}
-            <span className="about-text-highlight">performance, accesibilidad y experiencia de usuario</span>.
+            {t('about.body1')}
           </p>
           <p className="about-text-body" style={{ marginBottom: '1.5rem' }}>
-            Cuando no estoy programando, disfruto ense&ntilde;ar, experimentar con nuevas tecnolog&iacute;as
-            o explorar t&eacute;cnicas avanzadas de desarrollo web.
+            {t('about.body2')}
           </p>
 
           <StaggerContainer stagger={0.08}>

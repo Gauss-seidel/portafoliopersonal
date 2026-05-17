@@ -2,18 +2,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useScrollDirection } from '../../hooks/useScrollDirection'
+import { useLanguage } from '../../context/LanguageContext'
 
-const links = [
-  { label: 'Inicio', to: '/' },
-  { label: 'Proyectos', to: '/projects' },
-  { label: 'Sobre mi', to: '/about' },
-  { label: 'Habilidades', to: '/skills' },
-  { label: 'Contacto', to: '/contact' },
+const linkConfig = [
+  { key: 'home', to: '/' },
+  { key: 'projects', to: '/projects' },
+  { key: 'about', to: '/about' },
+  { key: 'skills', to: '/skills' },
+  { key: 'contact', to: '/contact' },
 ]
 
 export default function Navbar() {
   const direction = useScrollDirection()
   const [menuOpen, setMenuOpen] = useState(false)
+  const { t, lang, toggleLang } = useLanguage()
 
   return (
     <motion.header
@@ -32,22 +34,31 @@ export default function Navbar() {
             </NavLink>
 
             <div className="navbar-links">
-              {links.map((link) => (
+              {linkConfig.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   className="nav-link"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </NavLink>
               ))}
             </div>
 
             <button
+              className="lang-toggle"
+              onClick={toggleLang}
+              aria-label={lang === 'es' ? 'Switch to English' : 'Cambiar a español'}
+              title={lang === 'es' ? 'English' : 'Español'}
+            >
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+
+            <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="navbar-hamburger"
-              aria-label="Men&uacute;"
+              aria-label={t('nav.menuLabel')}
             >
               <motion.span
                 className="hamburger-line"
@@ -76,14 +87,14 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
           >
             <div className="mobile-menu-inner">
-              {links.map((link) => (
+              {linkConfig.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   className="mobile-link"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </NavLink>
               ))}
             </div>

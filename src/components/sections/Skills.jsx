@@ -2,12 +2,15 @@ import { motion } from 'framer-motion'
 import { skillCategories } from '../../data/skills'
 import Reveal from '../animations/Reveal'
 import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer'
+import { useLanguage } from '../../context/LanguageContext'
 
 export default function Skills() {
+  const { t } = useLanguage()
+
   return (
     <section className="section section--default">
       <Reveal>
-        <h2 className="section-title">Habilidades T&eacute;cnicas</h2>
+        <h2 className="section-title">{t('skills.title')}</h2>
         <div className="section-divider" style={{ marginBottom: '2.5rem' }} />
       </Reveal>
 
@@ -22,7 +25,7 @@ export default function Skills() {
               <div className="skill-card-accent" />
 
               <div className="skill-card-icon">{cat.icon}</div>
-              <h3 className="skill-card-title">{cat.title}</h3>
+              <h3 className="skill-card-title">{t(`skills.categories.${cat.id}`)}</h3>
 
               <ul className="skill-list">
                 {cat.skills.map((skill) => (
